@@ -1,7 +1,0 @@
-additionIndicationInOverviewRuler=true
-lineNumberRuler=true
-occurrenceIndicationColor=0,255,255
-overviewRuler_migration=migrated_3.1
-quickdiff.defaultProvider=org.eclipse.egit.ui.internal.decorators.GitQuickDiffProvider
-spellingEnabled=false
-writeOccurrenceIndicationColor=0,255,64
