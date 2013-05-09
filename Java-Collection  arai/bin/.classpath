@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding=".settings/|search/" kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="DERBY_CONTAINER"/>
+	<classpathentry kind="lib" path=".settings"/>
+	<classpathentry kind="lib" path="search"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/derbyclient.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/derbytools.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/derby.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/derbynet.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/htmlparser-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/jpox-core-1.2.0-beta-5.jar"/>
+	<classpathentry kind="lib" path="C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/hsqldb-1.7.2.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

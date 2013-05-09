@@ -1,0 +1,11 @@
+Thu May 09 11:41:21 JST 2013 : Apache Derby Network Server - 10.8.1.2 - (1095077) が起動し、ポート 1527 で接続の受け入れ準備が完了しました
+----------------------------------------------------------------
+Thu May 09 13:23:03 JST 2013:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-013e-872a-0c70-00000000002e 
+on database directory C:\pleiades\workspace\Java-Collection\testDB  with class loader sun.misc.Launcher$AppClassLoader@13e8d89 
+Loaded from file:/C:/pleiades/eclipse/plugins/org.apache.derby.core_10.8.1/derby.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_31-b05
+user.dir=C:\pleiades\workspace\Java-Collection
+derby.system.home=.
+Database Class Loader started - derby.database.classpath=''
