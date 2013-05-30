@@ -48,26 +48,29 @@ public class Crawler
 	private Connection con = null; //特定のデータベースと接続するための
 
 	//メイン関数
-	public static void main(String[] args) {
+	/*
+	public static void main(String[] args) throws ClassNotFoundException {
 		// TODO 自動生成されたメソッド・スタブ
 		Set<String> pagelist=new HashSet<String>();
 		pagelist.add("http://kiwitobes.com/wiki/Perl.html");
-		Crawler crawler = new Crawler("C:\\SQLiteDB\\db.db");
+		Crawler crawler = new Crawler("test.db");
 		crawler.createindextables();
 		crawler.crawl(pagelist, 2);
 	}
+	*/
 	
 	//データベースへの埋め込みを始める関数。　dbnameに接続文字列を入れる。
-	public Crawler(String dbname) {
+	public Crawler(String dbname) throws ClassNotFoundException {
 		this.dbname = dbname;
 		init();
 	}
 
 	//Derbyを起動させる関数
-	private void init() {
+	private void init() throws ClassNotFoundException {
 		if (this.con == null) {
 			try {
 				//SQLiteのデータベースに接続
+				Class.forName("org.sqlite.JDBC");
 				this.con = DriverManager.getConnection("jdbc:sqlite:" + this.dbname);
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -85,7 +88,7 @@ public class Crawler
 	}
 	
 	//そのサイトのページ数（深さ）だけ繰り返し解析する関数
-	public void crawl(Set<String> pages, int depth) {
+	public void crawl(Set<String> pages, int depth) throws ClassNotFoundException {
 		for (int i = 0; i < depth; i++) {
 			Set<String> newpages = new HashSet<String>();
 			for (String page : pages) { //そのページの数だけ繰り返す
@@ -134,7 +137,7 @@ public class Crawler
 	}
 
 	//インデックスに項目を追加する
-	public void addtoindex(String url, NodeList soup) {
+	public void addtoindex(String url, NodeList soup) throws ClassNotFoundException {
 		if (isindexed(url)) { //もしもう既にされていたのならそのまま還す。
 			return;
 		}
@@ -156,7 +159,7 @@ public class Crawler
 		return;
 	}
 	
-	private int execute(String sql) {
+	private int execute(String sql) throws ClassNotFoundException {
 		init();
 		Statement stat;
 		try {
@@ -212,7 +215,7 @@ public class Crawler
 	}
 	
 	public Integer getenetryid(String table, String field, String value,
-			boolean createNew) {
+			boolean createNew) throws ClassNotFoundException {
 		init();
 		Statement stat = null;
 		try {
@@ -238,7 +241,7 @@ public class Crawler
 		return null;
 	}
 
-	public Boolean isindexed(String url) {
+	public Boolean isindexed(String url) throws ClassNotFoundException {
 		init();
 		Statement stat = null;
 		try {
@@ -267,7 +270,7 @@ public class Crawler
 		return false;
 	}
 	
-	public void addlinkref(String urlFrom, String urlTo, String linkText) {
+	public void addlinkref(String urlFrom, String urlTo, String linkText) throws ClassNotFoundException {
 		String[] words = separatewords(linkText);
 
 		Integer fromid = getenetryid("urllist", "url", urlFrom, true);

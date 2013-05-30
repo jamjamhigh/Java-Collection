@@ -5,5 +5,8 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/commons-dbutils-1.5/commons-dbutils-1.5.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/htmlparser1_6/lib/htmlparser.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.7.0_09/db/lib/derby.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/sqlite-jdbc-3.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/sqlite-jdbc-3.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/commons-collections-3.2.1/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
