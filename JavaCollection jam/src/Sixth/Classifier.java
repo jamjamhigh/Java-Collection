@@ -3,11 +3,12 @@ package Sixth;
 import java.util.Set;
 
 //分類器のクラス
-public class Classifier {
+public class Classifier extends Prf{
 	//抽象クラスFeature
 	protected Feature feature;
 	//インターフェイスのCategory
 	private Category category;
+	protected FeatureCategoryDb featureCategory;
 
 	//このクラスの主実行部分
 	public Classifier(Feature getfeatures) {
@@ -16,6 +17,18 @@ public class Classifier {
 
 		//抽象クラスの動作が実行される
 		this.feature = getfeatures;
+	}
+	
+	public Classifier(Feature getfFeature, String dbname) {
+		this.feature = getfFeature;
+		this.featureCategory = new FeatureCategoryDb(dbname);
+
+	}
+
+	public Classifier(Feature getfFeature, String dbname, boolean setdb) {
+		this.feature = getfFeature;
+		this.featureCategory = new FeatureCategoryDb(dbname, setdb);
+
 	}
 	
 	//特徴・カテゴリのカウントを増やす。
@@ -56,6 +69,16 @@ public class Classifier {
 		this.category.finishtrain();
 	}
 	
+	//数字を確立に変換する関数。
+	@Override
+	public double execute(String f, String cat) {
+		// TODO 自動生成されたメソッド・スタブ
+		if (catcount(cat) == 0) {
+			return 0.0;			
+		}
+		return  fcount(f,cat) / catcount(cat);
+	}
+	
 	//推測をする関数
 	//不適切な単語を一概に不適切と決めつけないための、仮の確率を設定する
 	public double weightedprob(String f, String cat, Prf prf, double weight, double ap) {
@@ -81,7 +104,7 @@ public class Classifier {
 	//サンプルとして走らせるための
 	public void sampletrain(Classifier cl) {
 		cl.train("Nobody owns the water.", "good");
-		cl.train("the quick rabbit jums fences", "good");
+		cl.train("the quick rabbit jumps fences", "good");
 		cl.train("buy pharmaceuticals now", "bad");
 		cl.train("make quick money at the online casino", "bad");
 		cl.train("the quick brown fox jumps", "good");
