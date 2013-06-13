@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+/Users/takahashiyousuke/Desktop/Java-Collection/.metadata/.plugins/org.eclipse.jdt.core
+3867445943.index
